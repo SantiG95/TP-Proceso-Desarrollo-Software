@@ -1,12 +1,12 @@
 package Clases;
 
-public class Moto extends Vehiculo{
-    public Moto(String marca, double precioBase, String modelo, String color, int numeroChasis, int numero) {
+public class Camioneta extends Vehiculo{
+    public Camioneta(String marca, double precioBase, String modelo, String color, int numeroChasis, int numero) {
         super(marca, precioBase, modelo, color, numeroChasis, numero);
     }
 
     public String toString(){
-        return "DATOS MOTO" +
+        return "DATOS CAMIONETA" +
                 "\nMarca: " + marca +
                 "\nModelo: " + modelo +
                 "\nColor: " + color +
@@ -18,11 +18,8 @@ public class Moto extends Vehiculo{
     @Override
     double calcularImpuesto() {
         double impuesto = 0;
-        impuesto += precioBase * ImpuestoNacional.impuestoMotos /100;
-        impuesto += precioBase * ImpuestoProvincial.impuestoMotos /100;
+        impuesto += precioBase * ImpuestoNacional.impuestoCamionetas /100;
+        impuesto += precioBase * ImpuestoProvincial.impuestoCamionetas /100;
         return impuesto;
     }
-
-
 }
-
