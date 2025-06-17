@@ -1,6 +1,6 @@
 package Clases;
 
-import java.util.List;
+import java.util.ArrayList;
 
 
 abstract class Vehiculo {
@@ -10,7 +10,8 @@ abstract class Vehiculo {
     String color;
     int numeroChasis;
     int numero;
-    List<ConfiguracionAdicional> configuracionesAdicionales = new List<ConfiguracionAdicional>();
+    boolean disponible;
+    ArrayList<ConfiguracionAdicional> configuracionesAdicionales = new ArrayList<ConfiguracionAdicional>();
 
     public Vehiculo(String marca, double precioBase, String modelo, String color, int numeroChasis, int numero) {
         this.marca = marca;
@@ -19,6 +20,7 @@ abstract class Vehiculo {
         this.color = color;
         this.numeroChasis = numeroChasis;
         this.numero = numero;
+        this.disponible = true;
     }
 
     public double calcularPrecio(){
@@ -28,7 +30,7 @@ abstract class Vehiculo {
     private double calcularCostosAdicionales() {
         double costo = 0;
         for (int i = 0; i < configuracionesAdicionales.size(); i++) {
-            costo += configuracionesAdicionales.calcularCostoAdicional();
+            costo += configuracionesAdicionales.get(i).calcularCostoAdicional();
         }
         return costo;
     }
@@ -37,6 +39,10 @@ abstract class Vehiculo {
 
     public Vehiculo getVehiculo(){
         return this;
+    }
+
+    public boolean estaDisponible() {
+        return disponible;
     }
 
     public void agregarCostoAdicional(ConfiguracionAdicional configuracionAdicional){

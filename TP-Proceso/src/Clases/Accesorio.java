@@ -1,3 +1,5 @@
+package Clases;
+
 public class Accesorio extends ConfiguracionAdicional {
     private double costoDelAccesorio;
 
