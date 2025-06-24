@@ -40,8 +40,8 @@ public class Main {
 
     private static void iniciarSesion() {
         System.out.println("\n#############################################");
-        System.out.println("##       BIENVENIDO A LA CONCESIONARIA       ##");
-        System.out.println("#############################################");
+        System.out.println(  "##       BIENVENIDO A LA CONCESIONARIA     ##");
+        System.out.println(  "#############################################");
         while (true) {
             System.out.print("Ingrese su documento (o salir): ");
             String input = scanner.nextLine().trim();
