@@ -82,7 +82,10 @@ public class Main {
                 case 2 -> verCatalogo();
                 case 3 -> agregarAuto();
                 case 4 -> generarInformes();
-                case 5 -> System.out.println("Volviendo al inicio de sesión...");
+                case 5 -> {
+                    System.out.println("Volviendo al inicio de sesión...");
+                    return;
+                }
                 default -> System.out.println("Opción inválida.");
             }
             if (opcion != 4) pausa();
@@ -101,7 +104,10 @@ public class Main {
             switch (opcion) {
                 case 1 -> realizarNuevaVenta();
                 case 2 -> verCatalogo();
-                case 3 -> System.out.println("Volviendo al inicio de sesión...");
+                case 3 -> {
+                    System.out.println("Volviendo al inicio de sesión...");
+                    return;
+                }
                 default -> System.out.println("Opción inválida.");
             }
             if (opcion != 3) pausa();
@@ -122,7 +128,10 @@ public class Main {
                 case 1 -> verMisPedidos();
                 case 2 -> verCatalogo();
                 case 3 -> verSeguimientoDePedido();
-                case 4 -> System.out.println("Volviendo al inicio de sesión...");
+                case 4 -> {
+                    System.out.println("Volviendo al inicio de sesión...");
+                    return;
+                }
                 default -> System.out.println("Opción inválida.");
             }
             if (opcion != 4) pausa();
@@ -194,8 +203,13 @@ public class Main {
         System.out.println("2. Camion");
         System.out.println("3. Moto");
         System.out.println("4. Camioneta");
+        System.out.println("5. Salir");
         System.out.print("Opción: ");
         int opVehiculo = leerOpcion();
+        if(opVehiculo != 1 && opVehiculo != 2 && opVehiculo != 3 && opVehiculo != 4){
+            System.out.println("Operacion anulada");
+            return;
+        }
 
         System.out.print("Ingrese nombre de marca: ");
         String marca = scanner.nextLine().trim();
